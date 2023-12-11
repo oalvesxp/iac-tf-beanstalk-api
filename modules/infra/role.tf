@@ -20,9 +20,9 @@ resource "aws_iam_role" "this" {
 }
 
 ## AWS IAM role policy of Beanstalk
-resource "aws_iam_role_policy" "name" {
+resource "aws_iam_role_policy" "this" {
   name = "beanstalk-ec2"
-  role = aws_iam_role.beanstalk.id
+  role = aws_iam_role.this.id
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
@@ -53,4 +53,10 @@ resource "aws_iam_role_policy" "name" {
       },
     ]
   })
+}
+
+## AWS IAM instance profile configuration
+resource "aws_iam_instance_profile" "this" {
+  name = "beanstalk-ec2"
+  role = aws_iam_role.this.name
 }
