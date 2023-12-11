@@ -14,6 +14,7 @@ Subir uma infraestrutura para uma API através do Terraform no AWS Beanstalk.
 Conhecimentos em:
 
 - Amazon Web Services;
+- AWScli;
 - Linux
 - Terraform
 - Docker
@@ -26,7 +27,13 @@ Softwares e Versões:
 - Sistema Operacional:
 ```
 $ hostnamectl | grep -i "operating system"
-  Operating System: Ubuntu 20.04.6 LTS
+  Operating System: Debian GNU/Linux 12 (bookworm)
+```
+
+- AWS CLI:
+```
+$ aws --version
+aws-cli/2.9.19 Python/3.11.2 Linux/6.1.0-13-amd64 source/x86_64.debian.12 prompt/off
 ```
 
 - Terraform:
