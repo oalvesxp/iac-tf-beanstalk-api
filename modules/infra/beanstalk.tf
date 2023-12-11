@@ -31,6 +31,6 @@ resource "aws_elastic_beanstalk_environment" "this" {
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "IamInstanceProfile"
-    value     = aws_iam_instance_profile
+    value     = aws_iam_instance_profile.this.name
   }
 }
