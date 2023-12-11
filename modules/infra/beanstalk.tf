@@ -34,3 +34,18 @@ resource "aws_elastic_beanstalk_environment" "this" {
     value     = aws_iam_instance_profile.this.name
   }
 }
+
+## AWS Beanstalk version configuration
+resource "aws_elastic_beanstalk_application_version" "default" {
+  depends_on = [
+    aws_elastic_beanstalk_application.this,
+    aws_elastic_beanstalk_environment.this,
+    aws_s3_bucket_object.this
+  ]
+
+  name        = var.environment
+  application = var.repo_name
+  description = var.repo_description
+  bucket      = aws_s3_bucket.this.id
+  key         = aws_s3_bucket_object.this.id
+}
