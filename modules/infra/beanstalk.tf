@@ -12,7 +12,7 @@ resource "aws_elastic_beanstalk_application" "this" {
 
 ## Beanstalk environment configuration
 resource "aws_elastic_beanstalk_environment" "this" {
-  name                = var.env
+  name                = var.environment
   application         = aws_elastic_beanstalk_application.this.name
   solution_stack_name = "64bit Amazon Linux 2023 v4.1.1 running Docker"
 
